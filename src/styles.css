@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #f9f2df;
+  background: #031f14;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --green: #032b1a;
+  --deep: #02180f;
+  --gold: #e9bd65;
+  --gold-light: #f8e6b0;
+  --cream: #fff3d4;
+  --muted: #c6c8b8;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { margin: 0; min-width: 320px; overflow-x: hidden; background: var(--deep); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+main { overflow: visible; position: relative; isolation: isolate; background: radial-gradient(ellipse at 50% 4%, #07502c 0, #032b1a 34%, #02180f 78%); }
+.ambient { position: absolute; pointer-events: none; width: 360px; height: 360px; border-radius: 50%; filter: blur(90px); opacity: .14; }
+.ambient-one { top: 5%; left: -180px; background: #e9bd65; }
+.ambient-two { top: 42%; right: -220px; background: #0f9b57; }
+.topbar { height: 82px; padding: 0 clamp(20px, 6vw, 90px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f1d38a20; position: relative; z-index: 3; }
+.brand { display: flex; gap: 11px; align-items: center; }
+.brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--gold); border-radius: 50%; font-family: "Playfair Display", serif; font-size: 24px; color: var(--gold-light); }
+.brand strong { display: block; font-family: "Playfair Display", serif; font-size: 17px; letter-spacing: .02em; }
+.brand small { display: block; margin-top: 3px; font-size: 8px; letter-spacing: .18em; color: var(--gold); }
+.nav-order { display: inline-flex; align-items: center; gap: 7px; border: 1px solid #d9b65e80; border-radius: 99px; padding: 10px 16px; color: var(--gold-light); font-size: 12px; transition: .25s ease; }
+.nav-order:hover { background: var(--gold); color: var(--deep); }
+.hero { min-height: 710px; padding: 50px clamp(22px, 7vw, 110px) 70px; display: grid; grid-template-columns: 1fr .82fr; align-items: center; gap: 5vw; position: relative; max-width: 1440px; margin: auto; }
+.hero-copy { max-width: 590px; z-index: 1; padding-bottom: 35px; }
+.eyebrow { display: flex; align-items: center; gap: 9px; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+.eyebrow svg { stroke-width: 1.5; }
+.hero h1, h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 500; letter-spacing: -.045em; }
+.hero h1 { font-size: clamp(52px, 6.3vw, 88px); line-height: .98; margin: 24px 0; }
+h1 em, h2 em { color: var(--gold); font-weight: 500; }
+.hero-lead { color: #d3d9cd; font-size: clamp(15px, 1.4vw, 18px); line-height: 1.8; max-width: 450px; }
+.open-invite, .final-order, .menu-cta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; border: 0; border-radius: 99px; background: linear-gradient(120deg, #f4d98d, #c58a2e); color: #082516; padding: 15px 23px; font-weight: 700; font-size: 13px; cursor: pointer; box-shadow: 0 8px 28px #d9a84022; transition: transform .25s, box-shadow .25s; }
+.open-invite { margin-top: 24px; }
+.open-invite:hover, .final-order:hover, .menu-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 32px #d9a84044; }
+.open-invite.opened { background: #f6e8bf; }
+.hero-note { margin-top: 27px; color: #b9c4b6; font-size: 11px; letter-spacing: .06em; }
+.tiny-diya { color: var(--gold); margin-right: 8px; }
+.hero-art { justify-self: center; position: relative; width: min(100%, 440px); }
+.hero-art img { display: block; width: 100%; height: auto; border-radius: 5px; box-shadow: 0 24px 70px #0008; position: relative; z-index: 1; animation: floatPoster 6s ease-in-out infinite; }
+.art-halo { position: absolute; inset: 7% -10%; border-radius: 50%; background: #d9a84020; filter: blur(55px); }
+.art-caption { text-align: center; font-size: 8px; letter-spacing: .2em; color: #d6b86c; margin-top: 18px; }
+.art-caption span { padding: 0 10px; }
+.scroll-cue { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; color: #b9c4b6; font-size: 8px; letter-spacing: .24em; white-space: nowrap; }
+.scroll-cue span { height: 1px; width: 35px; background: var(--gold); }
+.section-wrap { max-width: 1300px; margin: auto; padding: 100px clamp(22px, 6vw, 80px); }
+.celebration { background: transparent; }
+.section-heading { text-align: center; margin-bottom: 54px; }
+.centered { justify-content: center; }
+.section-heading h2, .wishes-copy h2, .order-card h2 { font-size: clamp(40px, 5.5vw, 68px); line-height: 1.05; margin: 17px 0; }
+.section-heading p { color: #c8d0c2; line-height: 1.7; font-size: 14px; }
+.menu-layout { display: grid; grid-template-columns: .82fr 1fr; gap: clamp(28px, 5vw, 75px); align-items: start; }
+.menu-poster { position: relative; max-width: 500px; margin: auto; overflow: hidden; border-radius: 8px; box-shadow: 0 22px 60px #0005; }
+.menu-poster img { display: block; width: 100%; height: auto; }
+.poster-shine { position: absolute; top: -30%; left: -80%; width: 45%; height: 160%; transform: rotate(22deg); background: linear-gradient(90deg, transparent, #fff2, transparent); animation: shine 8s ease-in-out infinite; pointer-events: none; }
+.sweet-list { padding-top: 8px; }
+.sweet-row { display: flex; align-items: center; gap: 17px; padding: 21px 0; border-bottom: 1px solid #e4c26d2b; opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; transition-delay: var(--delay, 0ms); }
+.sweet-row.is-visible { opacity: 1; transform: translateY(0); }
+.sweet-number { font-family: "Playfair Display", serif; color: #b58b3f; font-size: 12px; width: 22px; }
+.sweet-info { flex: 1; min-width: 0; }
+.sweet-info h3 { font-family: "Playfair Display", serif; font-size: 21px; font-weight: 500; margin: 0 0 5px; }
+.sweet-info p { margin: 0; color: #aebcaf; font-size: 11px; line-height: 1.5; }
+.sweet-price { text-align: right; min-width: 82px; color: var(--gold-light); }
+.sweet-price strong { display: block; font-family: "Playfair Display", serif; font-size: 23px; font-weight: 600; }
+.sweet-price span { display: block; color: #c5c5ad; font-size: 10px; margin-top: 2px; }
+.menu-cta { margin-top: 27px; background: #f0d17e; width: 100%; }
+.price-note { color: #9cae9d; font-size: 10px; line-height: 1.6; text-align: center; }
+.wishes-section { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 8vw, 120px); align-items: center; max-width: 1280px; margin: auto; padding: 100px clamp(22px, 6vw, 80px); }
+.wishes-image { max-width: 460px; justify-self: center; border: 1px solid #d8b75c60; padding: 9px; border-radius: 5px; }
+.wishes-image img { display: block; width: 100%; }
+.wishes-copy h2 { margin-top: 24px; }
+.wishes-copy p { max-width: 430px; color: #c4cfc1; font-size: 14px; line-height: 1.9; }
+.wish-signoff { margin: 28px 0; color: #c4cfc1; font-size: 12px; }
+.wish-signoff strong { display: block; color: var(--gold-light); font-family: "Playfair Display", serif; font-size: 21px; margin-top: 7px; }
+.outline-cta { display: inline-flex; align-items: center; gap: 10px; padding: 13px 18px; border: 1px solid #d9b65e8a; border-radius: 99px; color: var(--gold-light); font-size: 12px; transition: .25s; }
+.outline-cta:hover { background: #e9bd6518; transform: translateY(-2px); }
+.order-section { padding: 35px 20px 100px; }
+.order-card { max-width: 850px; margin: auto; padding: clamp(35px, 6vw, 70px) 25px; text-align: center; border: 1px solid #e5c36a70; border-radius: 12px; background: radial-gradient(ellipse at top, #0b4a2c, #032719 65%); box-shadow: 0 24px 80px #0003; }
+.order-card h2 { margin: 22px 0; }
+.order-card > p { color: #c8d0c2; font-size: 13px; margin: 28px 0 7px; }
+.phone-link { display: block; color: var(--gold-light); font-size: clamp(24px, 4vw, 37px); font-weight: 700; letter-spacing: .04em; }
+.final-order { margin-top: 27px; }
+.instagram-link { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 25px; font-size: 12px; color: #e7d69e; }
+.footer { text-align: center; padding: 30px 20px 45px; border-top: 1px solid #e8c46b25; color: #aebcaf; }
+.footer-brand { font-family: "Playfair Display", serif; font-size: 25px; color: var(--gold-light); }
+.footer p { font-size: 11px; letter-spacing: .08em; }
+.footer span { display: block; margin-top: 20px; font-size: 10px; color: #8c9e8c; }
+.reveal { opacity: 0; transform: translateY(25px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@keyframes floatPoster { 0%, 100% { transform: translateY(0) rotate(.4deg); } 50% { transform: translateY(-12px) rotate(-.4deg); } }
+@keyframes shine { 0%, 30% { left: -80%; } 65%, 100% { left: 140%; } }
+@media (max-width: 850px) {
+  .hero { grid-template-columns: 1fr 0.8fr; gap: 25px; padding-top: 55px; min-height: 620px; }
+  .hero h1 { font-size: clamp(45px, 7vw, 66px); }
+  .menu-layout { grid-template-columns: .75fr 1fr; gap: 28px; }
+  .sweet-row { gap: 10px; }
+  .sweet-info h3 { font-size: 18px; }
+  .sweet-info p { font-size: 10px; }
+  .sweet-price strong { font-size: 20px; }
+  .wishes-section { gap: 35px; }
+}
+@media (max-width: 620px) {
+  .topbar { height: 70px; padding: 0 17px; }
+  .brand-mark { width: 34px; height: 34px; }
+  .brand strong { font-size: 14px; }
+  .brand small { font-size: 6px; letter-spacing: .13em; }
+  .nav-order { padding: 9px 12px; font-size: 10px; }
+  .hero { display: flex; flex-direction: column; align-items: stretch; padding: 48px 22px 65px; gap: 35px; min-height: unset; }
+  .hero-copy { padding: 0; }
+  .hero h1 { font-size: clamp(50px, 14vw, 70px); margin: 19px 0; }
+  .hero-lead { font-size: 14px; line-height: 1.75; }
+  .open-invite { width: 100%; padding: 15px; }
+  .hero-note { font-size: 10px; }
+  .hero-art { width: min(84%, 350px); align-self: center; }
+  .scroll-cue { bottom: 25px; }
+  .section-wrap { padding: 75px 20px; }
+  .section-heading { margin-bottom: 32px; }
+  .section-heading h2, .wishes-copy h2, .order-card h2 { font-size: clamp(37px, 11vw, 52px); }
+  .section-heading p { font-size: 12px; }
+  .menu-layout { display: flex; flex-direction: column; gap: 36px; }
+  .menu-poster { width: min(100%, 420px); }
+  .sweet-list { width: 100%; }
+  .sweet-row { padding: 18px 0; }
+  .sweet-info h3 { font-size: 20px; }
+  .sweet-info p { font-size: 11px; }
+  .sweet-price strong { font-size: 23px; }
+  .wishes-section { display: flex; flex-direction: column-reverse; padding: 75px 22px; gap: 38px; }
+  .wishes-copy { width: 100%; }
+  .wishes-image { width: min(100%, 390px); }
+  .wishes-copy p { font-size: 13px; }
+  .outline-cta { width: 100%; justify-content: center; }
+  .order-section { padding: 20px 14px 70px; }
+  .order-card { padding: 42px 18px; }
+  .order-card .eyebrow { font-size: 8px; letter-spacing: .16em; }
+  .phone-link { font-size: clamp(23px, 7vw, 31px); }
+  .final-order { width: 100%; }
+  .footer { padding-bottom: 35px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* =========================================
+   DIWALI FIREWORKS — SAFE LAYERING
+   Canvas sits above the page background,
+   behind all interactive/content sections.
+========================================= */
+
+.diwali-fireworks {
+  position: fixed;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.78;
+  mix-blend-mode: screen;
+}
+
+/* Keep all actual page content above the canvas.
+   Backgrounds are kept transparent where needed. */
+.topbar,
+.hero,
+.celebration,
+.wishes-section,
+.order-section,
+.footer {
+  position: relative;
+  z-index: 2;
+}
+
+.topbar {
+  background: transparent;
+}
+
+@media (max-width: 620px) {
+  .diwali-fireworks {
+    opacity: 0.58;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diwali-fireworks {
+    display: none;
+  }
+}
